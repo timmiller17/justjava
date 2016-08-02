@@ -14,21 +14,13 @@
         android:text="TOPPINGS"
         android:textSize="16sp"/>
 
-    <LinearLayout
+    <CheckBox
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
-
-        <CheckBox
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp"
-            android:text="Whipped cream"
-            android:textSize="16sp"/>
-    </LinearLayout>
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:paddingLeft="24dp"
+        android:text="Whipped cream"
+        android:textSize="16sp"/>
 
     <TextView
         android:layout_width="wrap_content"
