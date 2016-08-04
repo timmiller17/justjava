@@ -5,6 +5,7 @@ import android.support.v7.app.ActionBarActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.CheckBox;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import java.text.NumberFormat;
@@ -86,7 +87,9 @@ public class MainActivity extends ActionBarActivity {
      */
     private String createOrderSummary(int price, boolean whippedCreamCheckBoxState,
                                         boolean chocolateCheckBoxState) {
-        return  "Name: Bob Loblaw" +
+        EditText nameEditText = (EditText) findViewById(R.id.name_edit_text);
+
+        return  "Name: " + nameEditText.getText().toString() +
                 "\nAdd whipped cream? " + whippedCreamCheckBoxState +
                 "\nAdd chocolate? " + chocolateCheckBoxState +
                 "\nQuantity: " + quantity +
