@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.text.NumberFormat;
 
@@ -58,13 +59,18 @@ public class MainActivity extends ActionBarActivity {
     }
 
     public void increment(View view) {
-        quantity++;
+        if (quantity < 100) {
+            quantity++;
+        } else {
+            Toast.makeText(this, "100 is the max order.", Toast.LENGTH_SHORT).show();
+        }
         displayQuantity(quantity);
     }
 
     public void decrement(View view) {
-        if (quantity <= 0) {
-            quantity = 0;
+        if (quantity <= 1) {
+            quantity = 1;
+            Toast.makeText(this, "1 is the min order.", Toast.LENGTH_SHORT).show();
         } else {
             quantity--;
         }
