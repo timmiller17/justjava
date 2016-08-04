@@ -76,8 +76,11 @@ public class MainActivity extends ActionBarActivity {
      *
      */
     private int calculatePrice() {
-        int price = quantity * 5;
-        return price;
+        int basePrice = 5;
+        if (hasWhippedCream) { basePrice += 1; }
+        if (hasChocolate) { basePrice += 2; }
+
+        return quantity * basePrice;
     }
 
     /**
