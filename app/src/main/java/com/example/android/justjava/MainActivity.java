@@ -16,6 +16,7 @@ public class MainActivity extends ActionBarActivity {
 
     int quantity = 0;
     boolean hasWhippedCream = false;
+    boolean hasChocolate = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,7 +28,7 @@ public class MainActivity extends ActionBarActivity {
      * This method is called when the order button is clicked.
      */
     public void submitOrder(View view) {
-        displayMessage(createOrderSummary(calculatePrice(), hasWhippedCream));
+        displayMessage(createOrderSummary(calculatePrice(), hasWhippedCream, hasChocolate));
     }
 
     /**
@@ -83,9 +84,11 @@ public class MainActivity extends ActionBarActivity {
      *
      * @param price of the total order
      */
-    private String createOrderSummary(int price, boolean checkBoxState) {
+    private String createOrderSummary(int price, boolean whippedCreamCheckBoxState,
+                                        boolean chocolateCheckBoxState) {
         return  "Name: Bob Loblaw" +
-                "\nAdd whipped cream? " + checkBoxState +
+                "\nAdd whipped cream? " + whippedCreamCheckBoxState +
+                "\nAdd chocolate? " + chocolateCheckBoxState +
                 "\nQuantity: " + quantity +
                 "\nTotal: $" + price +
                 "\nThank you!";
@@ -93,7 +96,9 @@ public class MainActivity extends ActionBarActivity {
 
     public void updateCheckBoxState(View view) {
         CheckBox whippedCreamCheckBox = (CheckBox) findViewById(R.id.whipped_cream_checkbox);
+        CheckBox chocolateCheckBox = (CheckBox) findViewById(R.id.chocolate_checkbox);
         hasWhippedCream = whippedCreamCheckBox.isChecked();
+        hasChocolate = chocolateCheckBox.isChecked();
         Log.v(this.getClass().getSimpleName(), "hasWhippedCream=" + hasWhippedCream);
     }
 
